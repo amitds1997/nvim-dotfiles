@@ -3,6 +3,8 @@ local global = require('core.global')
 local lspconfig = require('lspconfig')
 local format = require('modules.lang.lsp_format')
 
+local lsp_dir = string.format('%s/lsp/', vim.fn.stdpath('data'))
+
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities.textDocument.completion.completionItem.snippetSupport = true
 capabilities.textDocument.completion.completionItem.resolveSupport = {
@@ -92,9 +94,9 @@ lspconfig.gopls.setup {
 -- Setup Lua LS
 lspconfig.sumneko_lua.setup {
 	cmd = {
-		global.home .. "/repos/lua-language-server/bin/Linux/lua-language-server",
+		lsp_dir .. "lua-language-server/bin/" .. global.platform .. "/lua-language-server",
 		"-E",
-		global.home .. "/repos/lua-language-server/main.lua"
+		lsp_dir .. "lua-language-server/main.lua"
 	},
 	settings = {
 		Lua = {

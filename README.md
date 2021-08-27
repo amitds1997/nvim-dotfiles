@@ -4,16 +4,14 @@
 
 Configuration assumes following are installed:
 1. `gopls`
-2. `lua-language-server`
-3. `bash-language-server`
-4. `pyright`
-5. `dockerfile-language-server-nodejs`
-6. `ripgrep`
-7. `coursier` (needed for `metals` setup)
-8. `bat` (optional)
+2. `bash-language-server`
+3. `pyright`
+4. `dockerfile-language-server-nodejs`
+5. `ripgrep`
+6. `coursier` (needed for `metals` setup)
+7. `bat` (optional)
+8. `jq` (needed for `install.sh`)
 
-Path is hard-coded for `lua-language-server` in the config.
+## Setup
 
-## To-do
-
-1. Currently, `lua-language-server` uses a hard-coded path. Move that to a configuration constants file.
+To setup `lua-language-server`, run `install.sh`.
