@@ -33,7 +33,7 @@ mkdir -p $nvim_data_path
 lua_package_name=$(openssl rand -hex 12)
 lua_release_name="${lua_package_name}.zip"
 
-curl -L --silent -o $lua_release_name $(curl --silent -H "Accept: application/vnd.github.v3+json" https://api.github.com/repos/sumneko/vscode-lua/releases/latest | jq -r '.assets[].browser_download_url' | head -n 1)
+curl -L --silent -o $lua_release_name $(curl --silent -H "Accept: application/vnd.github.v3+json" https://api.github.com/repos/sumneko/vscode-lua/releases/latest | grep 'browser_' | cut -d\" -f4)
 unzip -q $lua_release_name -d $lua_package_name
 
 chmod +x "${lua_package_name}/extension/server/bin/${platform}/lua-language-server"

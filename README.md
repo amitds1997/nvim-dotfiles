@@ -2,7 +2,7 @@
 
 ## Pre-setup
 
-Configuration assumes following are installed:
+Configuration assumes following are installed locally.
 1. `gopls`
 2. `bash-language-server`
 3. `pyright`
@@ -10,7 +10,6 @@ Configuration assumes following are installed:
 5. `ripgrep`
 6. `coursier` (needed for `metals` setup)
 7. `bat` (optional)
-8. `jq` (needed for `install.sh`)
 
 ## Setup
 
