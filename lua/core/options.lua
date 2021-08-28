@@ -8,6 +8,7 @@ local function set_opts()
 		wildmenu = true, -- Display command line's tab complete options
 		autoread = true, -- If file is unread, auto re-read it from disk
 		showmatch = true, -- Briefly jump to matching bracket, if exists
+		matchtime = 2, -- Tenth of a second to wait before jumping back to current bracket
 		lazyredraw = true, -- Do not redraw on macros and other non-necessary options
 		showcmd = true, -- Show command in bottom bar
 
