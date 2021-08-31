@@ -4,7 +4,7 @@ local set_keymap = vim.api.nvim_set_keymap
 local opts = {noremap = true, silent = true}
 
 -- Allow qi to work as <Esc>
-set_keymap('i', 'qw', '<ESC>', opts)
+set_keymap('i', 'qi', '<ESC>', opts)
 
 -- Allow movement through data visually, without skipping wrapped lines
 set_keymap('n', 'j', 'gj', opts)
