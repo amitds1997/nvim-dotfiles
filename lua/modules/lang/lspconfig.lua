@@ -128,3 +128,32 @@ for _, server in ipairs(servers) do
 		}
 	}
 end
+
+-- Configure icons for lsp
+require('vim.lsp.protocol').CompletionItemKind = {
+    ' Text', -- Text
+    ' Method', -- Method
+    ' Function', -- Function
+    ' Constructor', -- Constructor
+    ' Field', -- Field
+    ' Variable', -- Variable
+    ' Class', -- Class
+    'ﰮ Interface', -- Interface
+    ' Module', -- Module
+    ' Property', -- Property
+    ' Unit', -- Unit
+    ' Value', -- Value
+    '了 Enum', -- Enum
+    ' Keyword', -- Keyword
+    '﬌ Snippet', -- Snippet
+    ' Color', -- Color
+    ' File', -- File
+    ' Reference', -- Reference
+    ' Folder', -- Folder
+    ' EnumMember', -- EnumMember
+    ' Constant', -- Constant
+    ' Struct', -- Struct
+    ' Event', -- Event
+    'ﬦ Operator', -- Operator
+    ' TypeParameter', -- TypeParameter
+}
