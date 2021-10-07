@@ -4,6 +4,12 @@ function config.nvim_tree()
 	vim.g.nvim_tree_ignore = { ".git", "node_modules", ".cache" }
 	vim.g.nvim_tree_highlight_opened_files = 1
 	vim.api.nvim_set_keymap('n', '<Leader>e', ':NvimTreeToggle<CR>', { noremap = true, silent = true })
+
+	require('nvim-tree').setup {
+		update_focused_file = {
+			enable      = true,
+	 	},
+	}
 end
 
 function config.tokyonight()
