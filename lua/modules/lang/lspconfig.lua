@@ -98,6 +98,7 @@ lspconfig.sumneko_lua.setup {
 		"-E",
 		lsp_dir .. "lua-language-server/main.lua"
 	},
+	on_attach = enhance_attach,
 	settings = {
 		Lua = {
 			diagnostics = {
@@ -115,6 +116,24 @@ lspconfig.sumneko_lua.setup {
 		}
 	}
 }
+
+lspconfig.rust_analyzer.setup({
+	on_attach = enhance_attach,
+	settings = {
+		["rust-analyzer"] = {
+		    assist = {
+			importGranularity = "module",
+			importPrefix = "by_self",
+		    },
+		    cargo = {
+			loadOutDirsFromCheck = true
+		    },
+		    procMacro = {
+			enable = true
+		    },
+		}
+	}
+})
 
 local servers = {
 	'dockerls', 'bashls', 'pyright'
