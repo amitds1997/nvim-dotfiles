@@ -1,6 +1,6 @@
 local api, cmd = vim.api, vim.cmd
 
-metals_config = require("metals").bare_config
+metals_config = require("metals").bare_config()
 metals_config.init_options.statusBarProvider = "on"
 metals_config.settings = {
 	showImplicitArguments = true,

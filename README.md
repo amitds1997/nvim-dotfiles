@@ -4,9 +4,10 @@
 
 Configuration assumes following are installed locally.
 1. `gopls`
-5. `ripgrep`
-6. `coursier` (needed for `metals`)
-7. `bat` (optional)
+2. `ccls`
+3. `ripgrep`
+4. `coursier` (needed for `metals`)
+5. `bat` (optional)
 
 ## Setup
 

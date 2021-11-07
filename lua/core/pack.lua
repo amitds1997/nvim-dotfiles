@@ -97,12 +97,14 @@ function plugins.convert_compile_file()
 	local lnum = 1
 	lines[#lines + 1] = 'vim.cmd [[packadd packer.nvim]]\n'
 
-	for line in io.lines(packer_compiled) do
-		lnum = lnum + 1
-		if lnum > 9 then
-			lines[#lines + 1] = line .. '\n'
-			if line == 'END' then
-				break
+	if fn.filereadable(packer_compiled) == 1 then
+		for line in io.lines(packer_compiled) do
+			lnum = lnum + 1
+			if lnum > 9 then
+				lines[#lines + 1] = line .. '\n'
+				if line == 'END' then
+					break
+				end
 			end
 		end
 	end

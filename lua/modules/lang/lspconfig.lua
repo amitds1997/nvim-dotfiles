@@ -2,6 +2,7 @@ local api = vim.api
 local global = require('core.global')
 local lspconfig = require('lspconfig')
 local format = require('modules.lang.lsp_format')
+local util = lspconfig.util
 
 local lsp_dir = string.format('%s/lsp/', vim.fn.stdpath('data'))
 
@@ -91,6 +92,14 @@ lspconfig.gopls.setup {
 	}
 }
 
+-- Setup `clangd` server
+lspconfig.clangd.setup {
+	cmd = { "clangd", "--background-index" },
+	filetypes = { "c", "cpp", "objc", "objcpp" },
+	on_attach = enhance_attach,
+	root_dir = util.root_pattern("compile_commands.json", "compile_flags.txt", ".git") or util.path.dirname
+}
+
 -- Setup Lua LS
 lspconfig.sumneko_lua.setup {
 	cmd = {
@@ -136,7 +145,7 @@ lspconfig.rust_analyzer.setup({
 })
 
 local servers = {
-	'dockerls', 'bashls', 'pyright'
+	'dockerls', 'bashls', 'pyright', 'clangd',
 }
 
 for _, server in ipairs(servers) do
