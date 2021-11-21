@@ -1,9 +1,6 @@
 local lang = {}
 local conf = require('modules.lang.config')
 
-lang['nvim-lua/plenary.nvim'] = {
-}
-
 lang['nvim-treesitter/nvim-treesitter'] = {
 	event = 'BufRead',
 	config = conf.nvim_treesitter,
@@ -13,6 +10,9 @@ lang['nvim-treesitter/nvim-treesitter'] = {
 lang['scalameta/nvim-metals'] = {
 	event = 'BufReadPre',
 	config = conf.nvim_metals,
+	requires = {
+		{'nvim-lua/plenary.nvim'},
+	}
 }
 
 lang['neovim/nvim-lspconfig'] = {
